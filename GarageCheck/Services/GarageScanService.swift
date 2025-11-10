@@ -1,4 +1,5 @@
 import Foundation
+import ARKit
 import Combine
 
 /// Manages garage scanning state and results.
@@ -26,10 +27,9 @@ class GarageScanService: ObservableObject {
         #if targetEnvironment(simulator)
         return false
         #else
-        // RoomPlan requires LiDAR (iPhone 12 Pro+)
-        // We check via ARWorldTrackingConfiguration.supportsSceneReconstruction
-        if #available(iOS 15.4, *) {
-            return true // Will be further validated at runtime in GarageScanView
+        // RoomPlan requires LiDAR. Confirmed via ARWorldTrackingConfiguration.
+        if #available(iOS 16.0, *) {
+            return ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
         }
         return false
         #endif
