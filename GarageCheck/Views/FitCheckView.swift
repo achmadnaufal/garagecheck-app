@@ -4,6 +4,7 @@ struct FitCheckView: View {
     let garage: Garage
     let car: Car
 
+    @EnvironmentObject var savedResultsService: SavedResultsService
     @Environment(\.dismiss) private var dismiss
     @State private var savedResult = false
 
@@ -202,22 +203,14 @@ struct FitCheckView: View {
 
     // MARK: - Save
     private func saveResult() {
-        guard let data = try? JSONEncoder().encode(savedResults + [result]) else { return }
-        UserDefaults.standard.set(data, forKey: Constants.Storage.savedResultsKey)
+        savedResultsService.save(result: result)
         savedResult = true
-    }
-
-    private var savedResults: [FitResult] {
-        guard let data = UserDefaults.standard.data(forKey: Constants.Storage.savedResultsKey),
-              let results = try? JSONDecoder().decode([FitResult].self, from: data) else {
-            return []
-        }
-        return results
     }
 }
 
 struct FitCheckView_Previews: PreviewProvider {
     static var previews: some View {
         FitCheckView(garage: Garage.example, car: Car.example)
+            .environmentObject(SavedResultsService())
     }
 }

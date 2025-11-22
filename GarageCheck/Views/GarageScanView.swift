@@ -10,6 +10,14 @@ struct GarageScanView: View {
     @State private var widthText = ""
     @State private var heightText = ""
     @State private var showSavedConfirmation = false
+    @State private var showRoomCapture = false
+    @State private var showScanNamingAlert = false
+    @State private var pendingScanName = ""
+
+    // Pending dimensions from RoomPlan scan (before naming)
+    @State private var pendingLengthMm: Double = 0
+    @State private var pendingWidthMm: Double = 0
+    @State private var pendingHeightMm: Double = 0
 
     // MARK: - Body
     var body: some View {
@@ -34,6 +42,30 @@ struct GarageScanView: View {
         }
         .sheet(isPresented: $showManualEntry) {
             manualEntrySheet
+        }
+        #if !targetEnvironment(simulator)
+        .fullScreenCover(isPresented: $showRoomCapture) {
+            roomCaptureFullScreen
+        }
+        #endif
+        .alert("Name Your Garage", isPresented: $showScanNamingAlert) {
+            TextField("e.g. Rumah Depok", text: $pendingScanName)
+            Button("Save") {
+                scanService.saveScannedGarage(
+                    name: pendingScanName,
+                    lengthMm: pendingLengthMm,
+                    widthMm: pendingWidthMm,
+                    heightMm: pendingHeightMm
+                )
+                showSavedConfirmation = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    showSavedConfirmation = false
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text(String(format: "Scanned: %.1fm × %.1fm × %.1fm",
+                        pendingLengthMm / 1000, pendingWidthMm / 1000, pendingHeightMm / 1000))
         }
         .overlay(
             savedConfirmationBanner
@@ -142,7 +174,7 @@ struct GarageScanView: View {
 
     private var lidarScanButton: some View {
         Button(action: {
-            // TODO: Launch RoomPlan scanning in a full-screen cover
+            showRoomCapture = true
         }) {
             Label("Scan with LiDAR", systemImage: "camera.viewfinder")
                 .font(.headline)
@@ -153,6 +185,29 @@ struct GarageScanView: View {
                 .cornerRadius(Constants.UI.cornerRadius)
         }
     }
+
+    // MARK: - RoomCapture Full Screen (real device only)
+    #if !targetEnvironment(simulator)
+    private var roomCaptureFullScreen: some View {
+        RoomCaptureRepresentable(
+            onScanComplete: { lengthMm, widthMm, heightMm in
+                pendingLengthMm = lengthMm
+                pendingWidthMm = widthMm
+                pendingHeightMm = heightMm
+                pendingScanName = ""
+                showRoomCapture = false
+                // Small delay so the fullScreenCover can dismiss before showing alert
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    showScanNamingAlert = true
+                }
+            },
+            onCancel: {
+                showRoomCapture = false
+            }
+        )
+        .ignoresSafeArea()
+    }
+    #endif
 
     // MARK: - Manual Entry Sheet
 
