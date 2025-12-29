@@ -66,14 +66,14 @@ final class FitCalculationServiceTests: XCTestCase {
         let c = car(lengthMm: 4500, widthMm: 1800, heightMm: 1900)
         let result = FitCalculationService.calculate(garage: g, car: c)
 
-        // Floor fit is comfortable, but height fails
+        // Floor fit is comfortable, but height fails → status should be .doesNotFit
         XCTAssertLessThan(result.heightMarginMm, 0, "Height margin should be negative")
         XCTAssertFalse(
             FitCalculationService.canPhysicallyFit(garage: g, car: c),
             "canPhysicallyFit should return false when car is too tall"
         )
-        // fitStatus only checks length/width so status may be .fits — height is stored separately
         XCTAssertEqual(result.heightMarginMm, -100)
+        XCTAssertEqual(result.status, .doesNotFit, "Negative height should produce doesNotFit status")
     }
 
     // MARK: - Test: exact match (0 cm margin)
