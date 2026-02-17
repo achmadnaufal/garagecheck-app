@@ -65,6 +65,10 @@ class CarDataService: ObservableObject {
     var makes: [String] {
         Array(Set(cars.map { $0.make })).sorted()
     }
+
+    var segments: [String] {
+        Array(Set(cars.map { $0.segment })).sorted()
+    }
 }
 
 // MARK: - Hardcoded fallback (mirrors indonesian_cars.json)

@@ -5,11 +5,14 @@ struct CarSelectionView: View {
     @EnvironmentObject var scanService: GarageScanService
 
     @State private var searchText = ""
+    @State private var selectedSegment: String? = nil
     @State private var selectedCar: Car? = nil
     @State private var showFitCheck = false
 
     private var filteredCars: [Car] {
-        carDataService.search(query: searchText)
+        let bySearch = carDataService.search(query: searchText)
+        guard let segment = selectedSegment else { return bySearch }
+        return bySearch.filter { $0.segment == segment }
     }
 
     var body: some View {
@@ -18,7 +21,10 @@ struct CarSelectionView: View {
                 ProgressView("Loading cars...")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                carList
+                VStack(spacing: 0) {
+                    segmentFilterBar
+                    carList
+                }
             }
         }
         .searchable(text: $searchText, prompt: "Search make or model")
@@ -31,13 +37,52 @@ struct CarSelectionView: View {
         }
     }
 
+    // MARK: - Segment Filter Bar
+
+    private var segmentFilterBar: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                segmentChip("All", isSelected: selectedSegment == nil)
+                ForEach(carDataService.segments, id: \.self) { segment in
+                    segmentChip(segment, isSelected: selectedSegment == segment)
+                }
+            }
+            .padding(.horizontal, Constants.UI.padding)
+            .padding(.vertical, 10)
+        }
+        .background(Color(.systemBackground))
+    }
+
+    private func segmentChip(_ label: String, isSelected: Bool) -> some View {
+        Button {
+            if label == "All" {
+                selectedSegment = nil
+            } else {
+                selectedSegment = selectedSegment == label ? nil : label
+            }
+        } label: {
+            Text(label)
+                .font(.subheadline)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 7)
+                .background(isSelected ? Constants.Colors.primary : Color(.secondarySystemBackground))
+                .foregroundColor(isSelected ? .white : .primary)
+                .cornerRadius(20)
+        }
+        .buttonStyle(.plain)
+    }
+
+    // MARK: - Car List
+
     private var carList: some View {
         List {
             if filteredCars.isEmpty {
                 ContentUnavailableView(
                     "No Cars Found",
                     systemImage: "car.fill",
-                    description: Text("Try a different search term.")
+                    description: Text(selectedSegment != nil
+                                      ? "No \(selectedSegment!) cars match your search."
+                                      : "Try a different search term.")
                 )
             } else {
                 ForEach(carDataService.makes.filter { make in
@@ -88,9 +133,9 @@ struct CarSelectionView: View {
             Image(systemName: "building.2")
                 .font(.system(size: 64))
                 .foregroundColor(.secondary)
-            Text("No Garage Scanned")
+            Text("No Garage Selected")
                 .font(.title2.bold())
-            Text("Please scan or enter your garage dimensions first in the Garage tab, then check the fit for \(car.displayName).")
+            Text("Please add and select a garage in the Garage tab, then check the fit for \(car.displayName).")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 32)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081EE23AB637D4405D079CAF /* FitResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C188C1861A207B915199EC7 /* FitResultCard.swift */; };
 		0F5064E3944B03039D9EFED4 /* CarDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8779B7A6365614AA41F6CFC9 /* CarDataService.swift */; };
 		0F850F82EDAE5BB3BDE20A8F /* indonesian_cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 8470CD4B2A9BD983BE2872B6 /* indonesian_cars.json */; };
 		1721C055FD13C9B445DB791B /* RealityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */; };
@@ -16,10 +17,13 @@
 		2D50CD998ED45A91B86E257F /* RoomCaptureRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BE837FC8A90EDEA6B3858 /* RoomCaptureRepresentable.swift */; };
 		2F306A7EA642B50F5D52282F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F211AEBD616C1FC4627D99 /* Car.swift */; };
 		464DBCE3FF6C391F79122E0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68273C3EB93FDF1B90E85DF5 /* Assets.xcassets */; };
+		6B6361E31DB62C9D97900E18 /* CarPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696683C1C87CA76ABB7ED86F /* CarPickerSheet.swift */; };
 		6DB883121A084E0EB72A2B0E /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC461CA0A6D4186B1DEAE0C /* Garage.swift */; };
 		770BABE6FD8FAEAB99C28CB9 /* RoomPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D098C82B6830CA49ECE2B6C /* RoomPlan.framework */; };
+		7828368D865A8C7EDFBF12E1 /* GarageEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB76D10AA5E7FFD77B253EE /* GarageEditSheet.swift */; };
 		825E75EE131F32F6FBBCB6D8 /* FitCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C430DC872792F45169C7D /* FitCalculationService.swift */; };
 		859E7A81C215AB0ECC336A1F /* FitCalculationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2067B895F774EA46035293 /* FitCalculationServiceTests.swift */; };
+		8C676A399A1553682A9E5258 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D185A6D3AEE9F3BFFFC7EC6 /* CompareView.swift */; };
 		91404B4C96E2991F3FB9835B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8655E2BDE31D051E63510 /* DashboardView.swift */; };
 		99A0FBD8D2AB0C0CFD147629 /* SavedResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */; };
 		A732F8FA1425A8E19FFF6742 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B684406FBF7843FF09359 /* OnboardingView.swift */; };
@@ -28,6 +32,7 @@
 		E58AAD9D9E3E1CFA683F3B9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10051E15CFB09612BE37FAF0 /* Constants.swift */; };
 		E95DBE8109E3B46D6D164287 /* GarageScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF82D8260205E2A89940FE0 /* GarageScanService.swift */; };
 		ECF87541000132AAB29D5437 /* CarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AD650D1C2285AEF6EDD58 /* CarSelectionView.swift */; };
+		EF6D3004D0A5F4CE87AA7B83 /* GarageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52D02A017FF331714FE80C /* GarageListView.swift */; };
 		FF2A0FF0AA98AD47D07783D2 /* SavedResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E1695FDFA82DAD22B0CDA /* SavedResultsService.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +51,14 @@
 		10051E15CFB09612BE37FAF0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		13733CFD40B990B13FFD8B62 /* FitResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitResult.swift; sourceTree = "<group>"; };
 		14CA4406B765B66710837629 /* GarageCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCheckApp.swift; sourceTree = "<group>"; };
+		1C188C1861A207B915199EC7 /* FitResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitResultCard.swift; sourceTree = "<group>"; };
 		291C8488174DAB746817D65B /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARKit.framework; sourceTree = "<group>"; };
 		4B7BE837FC8A90EDEA6B3858 /* RoomCaptureRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureRepresentable.swift; sourceTree = "<group>"; };
 		4C7E1695FDFA82DAD22B0CDA /* SavedResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsService.swift; sourceTree = "<group>"; };
+		4D185A6D3AEE9F3BFFFC7EC6 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
 		4D2D4C9E498097F46B0617F6 /* GarageCheckTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GarageCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68273C3EB93FDF1B90E85DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		696683C1C87CA76ABB7ED86F /* CarPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPickerSheet.swift; sourceTree = "<group>"; };
 		6D098C82B6830CA49ECE2B6C /* RoomPlan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RoomPlan.framework; sourceTree = "<group>"; };
 		782C430DC872792F45169C7D /* FitCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCalculationService.swift; sourceTree = "<group>"; };
 		7E2067B895F774EA46035293 /* FitCalculationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCalculationServiceTests.swift; sourceTree = "<group>"; };
@@ -63,8 +71,10 @@
 		9FF82D8260205E2A89940FE0 /* GarageScanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageScanService.swift; sourceTree = "<group>"; };
 		B2048D2976D373A3ACC1C01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BE0EB78A521A258BBD87D4A9 /* GarageCheck.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GarageCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD52D02A017FF331714FE80C /* GarageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageListView.swift; sourceTree = "<group>"; };
 		D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsView.swift; sourceTree = "<group>"; };
 		D72095572518009B646DA7B9 /* FitCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCheckView.swift; sourceTree = "<group>"; };
+		DEB76D10AA5E7FFD77B253EE /* GarageEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageEditSheet.swift; sourceTree = "<group>"; };
 		F2250868854AF41541CDDC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealityKit.framework; sourceTree = "<group>"; };
 		F6C8655E2BDE31D051E63510 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -87,9 +97,14 @@
 		1B078955FD34B579B1A72B73 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				696683C1C87CA76ABB7ED86F /* CarPickerSheet.swift */,
 				883AD650D1C2285AEF6EDD58 /* CarSelectionView.swift */,
+				4D185A6D3AEE9F3BFFFC7EC6 /* CompareView.swift */,
 				F6C8655E2BDE31D051E63510 /* DashboardView.swift */,
 				D72095572518009B646DA7B9 /* FitCheckView.swift */,
+				1C188C1861A207B915199EC7 /* FitResultCard.swift */,
+				DEB76D10AA5E7FFD77B253EE /* GarageEditSheet.swift */,
+				CD52D02A017FF331714FE80C /* GarageListView.swift */,
 				82ED296ED0B20E41A7BB837C /* GarageScanView.swift */,
 				0A4B684406FBF7843FF09359 /* OnboardingView.swift */,
 				4B7BE837FC8A90EDEA6B3858 /* RoomCaptureRepresentable.swift */,
@@ -292,14 +307,19 @@
 			files = (
 				2F306A7EA642B50F5D52282F /* Car.swift in Sources */,
 				0F5064E3944B03039D9EFED4 /* CarDataService.swift in Sources */,
+				6B6361E31DB62C9D97900E18 /* CarPickerSheet.swift in Sources */,
 				ECF87541000132AAB29D5437 /* CarSelectionView.swift in Sources */,
+				8C676A399A1553682A9E5258 /* CompareView.swift in Sources */,
 				E58AAD9D9E3E1CFA683F3B9A /* Constants.swift in Sources */,
 				91404B4C96E2991F3FB9835B /* DashboardView.swift in Sources */,
 				825E75EE131F32F6FBBCB6D8 /* FitCalculationService.swift in Sources */,
 				2B494081BD5A414F4B3F012E /* FitCheckView.swift in Sources */,
 				D6A6656927CA6A074E4D8BB1 /* FitResult.swift in Sources */,
+				081EE23AB637D4405D079CAF /* FitResultCard.swift in Sources */,
 				6DB883121A084E0EB72A2B0E /* Garage.swift in Sources */,
 				B1F113386E3F49A6F7C5CD04 /* GarageCheckApp.swift in Sources */,
+				7828368D865A8C7EDFBF12E1 /* GarageEditSheet.swift in Sources */,
+				EF6D3004D0A5F4CE87AA7B83 /* GarageListView.swift in Sources */,
 				E95DBE8109E3B46D6D164287 /* GarageScanService.swift in Sources */,
 				2AD10EF011E5D3F05BEDE0DE /* GarageScanView.swift in Sources */,
 				A732F8FA1425A8E19FFF6742 /* OnboardingView.swift in Sources */,
