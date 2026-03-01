@@ -1,9 +1,6 @@
 import Foundation
 import SwiftUI
 
-/// Thresholds in millimeters
-private let COMFORTABLE_THRESHOLD: Double = 300  // 30cm per side
-private let TIGHT_THRESHOLD: Double = 100         // 10cm per side
 
 enum FitStatus: String, Codable, CaseIterable {
     case fits       = "Fits"

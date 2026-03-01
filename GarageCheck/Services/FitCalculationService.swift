@@ -4,8 +4,8 @@ import Foundation
 struct FitCalculationService {
 
     // MARK: - Thresholds (mm)
-    static let comfortableThreshold: Double = 300  // 30cm per side min
-    static let tightThreshold: Double = 100         // 10cm per side min
+    static let comfortableThreshold: Double = 300  // 15cm per side when car centered (total margin)
+    static let tightThreshold: Double = 100         //  5cm per side when car centered (total margin)
 
     /// Primary calculation: given a garage and car, return a FitResult
     static func calculate(garage: Garage, car: Car) -> FitResult {

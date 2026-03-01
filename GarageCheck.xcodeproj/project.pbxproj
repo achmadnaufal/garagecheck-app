@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F5064E3944B03039D9EFED4 /* CarDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8779B7A6365614AA41F6CFC9 /* CarDataService.swift */; };
+		0F850F82EDAE5BB3BDE20A8F /* indonesian_cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 8470CD4B2A9BD983BE2872B6 /* indonesian_cars.json */; };
+		1721C055FD13C9B445DB791B /* RealityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */; };
+		20D1F2414D53161C6CAFD0CE /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291C8488174DAB746817D65B /* ARKit.framework */; };
+		2AD10EF011E5D3F05BEDE0DE /* GarageScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED296ED0B20E41A7BB837C /* GarageScanView.swift */; };
+		2B494081BD5A414F4B3F012E /* FitCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72095572518009B646DA7B9 /* FitCheckView.swift */; };
+		2F306A7EA642B50F5D52282F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F211AEBD616C1FC4627D99 /* Car.swift */; };
+		6DB883121A084E0EB72A2B0E /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC461CA0A6D4186B1DEAE0C /* Garage.swift */; };
+		825E75EE131F32F6FBBCB6D8 /* FitCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C430DC872792F45169C7D /* FitCalculationService.swift */; };
+		91404B4C96E2991F3FB9835B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8655E2BDE31D051E63510 /* DashboardView.swift */; };
+		99A0FBD8D2AB0C0CFD147629 /* SavedResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */; };
+		A732F8FA1425A8E19FFF6742 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B684406FBF7843FF09359 /* OnboardingView.swift */; };
+		B1F113386E3F49A6F7C5CD04 /* GarageCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA4406B765B66710837629 /* GarageCheckApp.swift */; };
+		D6A6656927CA6A074E4D8BB1 /* FitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13733CFD40B990B13FFD8B62 /* FitResult.swift */; };
+		E58AAD9D9E3E1CFA683F3B9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10051E15CFB09612BE37FAF0 /* Constants.swift */; };
+		E95DBE8109E3B46D6D164287 /* GarageScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF82D8260205E2A89940FE0 /* GarageScanService.swift */; };
+		ECF87541000132AAB29D5437 /* CarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AD650D1C2285AEF6EDD58 /* CarSelectionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A4B684406FBF7843FF09359 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		10051E15CFB09612BE37FAF0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		13733CFD40B990B13FFD8B62 /* FitResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitResult.swift; sourceTree = "<group>"; };
+		14CA4406B765B66710837629 /* GarageCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCheckApp.swift; sourceTree = "<group>"; };
+		291C8488174DAB746817D65B /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARKit.framework; sourceTree = "<group>"; };
+		782C430DC872792F45169C7D /* FitCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCalculationService.swift; sourceTree = "<group>"; };
+		82ED296ED0B20E41A7BB837C /* GarageScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageScanView.swift; sourceTree = "<group>"; };
+		82F211AEBD616C1FC4627D99 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		8470CD4B2A9BD983BE2872B6 /* indonesian_cars.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indonesian_cars.json; sourceTree = "<group>"; };
+		8779B7A6365614AA41F6CFC9 /* CarDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataService.swift; sourceTree = "<group>"; };
+		883AD650D1C2285AEF6EDD58 /* CarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionView.swift; sourceTree = "<group>"; };
+		9BC461CA0A6D4186B1DEAE0C /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
+		9FF82D8260205E2A89940FE0 /* GarageScanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageScanService.swift; sourceTree = "<group>"; };
+		B2048D2976D373A3ACC1C01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BE0EB78A521A258BBD87D4A9 /* GarageCheck.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GarageCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsView.swift; sourceTree = "<group>"; };
+		D72095572518009B646DA7B9 /* FitCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCheckView.swift; sourceTree = "<group>"; };
+		F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealityKit.framework; sourceTree = "<group>"; };
+		F6C8655E2BDE31D051E63510 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9DA959DA4D716694AA66576 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20D1F2414D53161C6CAFD0CE /* ARKit.framework in Frameworks */,
+				1721C055FD13C9B445DB791B /* RealityKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B078955FD34B579B1A72B73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				883AD650D1C2285AEF6EDD58 /* CarSelectionView.swift */,
+				F6C8655E2BDE31D051E63510 /* DashboardView.swift */,
+				D72095572518009B646DA7B9 /* FitCheckView.swift */,
+				82ED296ED0B20E41A7BB837C /* GarageScanView.swift */,
+				0A4B684406FBF7843FF09359 /* OnboardingView.swift */,
+				D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A637BF9C82C34A1E28CCC6E = {
+			isa = PBXGroup;
+			children = (
+				B86C90159A1BD26DF05E58DA /* GarageCheck */,
+				676DE3ED36F34B37C3662FCF /* Frameworks */,
+				DCCF2EDED5E9BF96D182190E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F50FD4D969E49AF7366AB50 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				14CA4406B765B66710837629 /* GarageCheckApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		39A1A132A5E419324EB738C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82F211AEBD616C1FC4627D99 /* Car.swift */,
+				13733CFD40B990B13FFD8B62 /* FitResult.swift */,
+				9BC461CA0A6D4186B1DEAE0C /* Garage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		676DE3ED36F34B37C3662FCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				291C8488174DAB746817D65B /* ARKit.framework */,
+				F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AEA974BA67DE4F5AEB08ED9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10051E15CFB09612BE37FAF0 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B86C90159A1BD26DF05E58DA /* GarageCheck */ = {
+			isa = PBXGroup;
+			children = (
+				B2048D2976D373A3ACC1C01F /* Info.plist */,
+				2F50FD4D969E49AF7366AB50 /* App */,
+				E5336F0E4FAA0AD9369DA603 /* Data */,
+				39A1A132A5E419324EB738C9 /* Models */,
+				F8DA6AD3697E0E1C99B590F2 /* Services */,
+				9AEA974BA67DE4F5AEB08ED9 /* Utils */,
+				1B078955FD34B579B1A72B73 /* Views */,
+			);
+			path = GarageCheck;
+			sourceTree = "<group>";
+		};
+		DCCF2EDED5E9BF96D182190E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE0EB78A521A258BBD87D4A9 /* GarageCheck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5336F0E4FAA0AD9369DA603 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8470CD4B2A9BD983BE2872B6 /* indonesian_cars.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F8DA6AD3697E0E1C99B590F2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8779B7A6365614AA41F6CFC9 /* CarDataService.swift */,
+				782C430DC872792F45169C7D /* FitCalculationService.swift */,
+				9FF82D8260205E2A89940FE0 /* GarageScanService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D15C863286518A95DAA9BE19 /* GarageCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE8328819FD1FAD51ECEC7A /* Build configuration list for PBXNativeTarget "GarageCheck" */;
+			buildPhases = (
+				3A15BCC285DBF7113450AA62 /* Sources */,
+				4070B8EEB7149CBC670EC128 /* Resources */,
+				E9DA959DA4D716694AA66576 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GarageCheck;
+			packageProductDependencies = (
+			);
+			productName = GarageCheck;
+			productReference = BE0EB78A521A258BBD87D4A9 /* GarageCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9484ADF39BC988D4E20E83A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D15C863286518A95DAA9BE19 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = DC72F6A37AFDF02A085FC59E /* Build configuration list for PBXProject "GarageCheck" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2A637BF9C82C34A1E28CCC6E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D15C863286518A95DAA9BE19 /* GarageCheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4070B8EEB7149CBC670EC128 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F850F82EDAE5BB3BDE20A8F /* indonesian_cars.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A15BCC285DBF7113450AA62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F306A7EA642B50F5D52282F /* Car.swift in Sources */,
+				0F5064E3944B03039D9EFED4 /* CarDataService.swift in Sources */,
+				ECF87541000132AAB29D5437 /* CarSelectionView.swift in Sources */,
+				E58AAD9D9E3E1CFA683F3B9A /* Constants.swift in Sources */,
+				91404B4C96E2991F3FB9835B /* DashboardView.swift in Sources */,
+				825E75EE131F32F6FBBCB6D8 /* FitCalculationService.swift in Sources */,
+				2B494081BD5A414F4B3F012E /* FitCheckView.swift in Sources */,
+				D6A6656927CA6A074E4D8BB1 /* FitResult.swift in Sources */,
+				6DB883121A084E0EB72A2B0E /* Garage.swift in Sources */,
+				B1F113386E3F49A6F7C5CD04 /* GarageCheckApp.swift in Sources */,
+				E95DBE8109E3B46D6D164287 /* GarageScanService.swift in Sources */,
+				2AD10EF011E5D3F05BEDE0DE /* GarageScanView.swift in Sources */,
+				A732F8FA1425A8E19FFF6742 /* OnboardingView.swift in Sources */,
+				99A0FBD8D2AB0C0CFD147629 /* SavedResultsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		67C4DDEBEC46CD7C08A3059D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = GarageCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A5BFC0AB797CAB1C9E1A995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = GarageCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9BEAE2E7ED551F8D2184A907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naufal.garagecheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		D4BDF623F919D05F35CD32E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naufal.garagecheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBE8328819FD1FAD51ECEC7A /* Build configuration list for PBXNativeTarget "GarageCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67C4DDEBEC46CD7C08A3059D /* Debug */,
+				6A5BFC0AB797CAB1C9E1A995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC72F6A37AFDF02A085FC59E /* Build configuration list for PBXProject "GarageCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BEAE2E7ED551F8D2184A907 /* Debug */,
+				D4BDF623F919D05F35CD32E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9484ADF39BC988D4E20E83A9 /* Project object */;
+}
