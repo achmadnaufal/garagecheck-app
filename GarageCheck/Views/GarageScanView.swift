@@ -19,6 +19,10 @@ struct GarageScanView: View {
     @State private var pendingWidthMm: Double = 0
     @State private var pendingHeightMm: Double = 0
 
+    // Error handling
+    @State private var showScanError = false
+    @State private var scanErrorMessage = ""
+
     // MARK: - Body
     var body: some View {
         ScrollView {
@@ -66,6 +70,13 @@ struct GarageScanView: View {
         } message: {
             Text(String(format: "Scanned: %.1fm × %.1fm × %.1fm",
                         pendingLengthMm / 1000, pendingWidthMm / 1000, pendingHeightMm / 1000))
+        }
+        .alert("Scan Error", isPresented: $showScanError) {
+            Button("Try Again") { showRoomCapture = true }
+            Button("Enter Manually") { showManualEntry = true }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text(scanErrorMessage)
         }
         .overlay(
             savedConfirmationBanner
@@ -196,13 +207,19 @@ struct GarageScanView: View {
                 pendingHeightMm = heightMm
                 pendingScanName = ""
                 showRoomCapture = false
-                // Small delay so the fullScreenCover can dismiss before showing alert
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     showScanNamingAlert = true
                 }
             },
             onCancel: {
                 showRoomCapture = false
+            },
+            onError: { message in
+                showRoomCapture = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    scanErrorMessage = message
+                    showScanError = true
+                }
             }
         )
         .ignoresSafeArea()

@@ -13,7 +13,11 @@ struct FitCalculationService {
         let widthMargin = garage.widthMm - car.widthMm
         let heightMargin = garage.heightMm - car.heightMm
 
-        let status = fitStatus(lengthMargin: lengthMargin, widthMargin: widthMargin)
+        let status = fitStatus(
+            lengthMargin: lengthMargin,
+            widthMargin: widthMargin,
+            heightMargin: heightMargin
+        )
 
         return FitResult(
             garage: garage,
@@ -25,10 +29,15 @@ struct FitCalculationService {
         )
     }
 
-    /// Determine fit status from margins (pure function, easily unit-testable)
-    static func fitStatus(lengthMargin: Double, widthMargin: Double) -> FitStatus {
-        // If either dimension is negative, the car physically cannot fit
-        guard lengthMargin >= 0, widthMargin >= 0 else {
+    /// Determine fit status from margins (pure function, easily unit-testable).
+    /// Height is now included: a negative height margin means the car doesn't fit.
+    static func fitStatus(
+        lengthMargin: Double,
+        widthMargin: Double,
+        heightMargin: Double = .greatestFiniteMagnitude
+    ) -> FitStatus {
+        // If any dimension is negative, the car physically cannot fit
+        guard lengthMargin >= 0, widthMargin >= 0, heightMargin >= 0 else {
             return .doesNotFit
         }
 

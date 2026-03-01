@@ -2,18 +2,21 @@
 import SwiftUI
 import RoomPlan
 
-// MARK: - Callback type
+// MARK: - Callback types
 typealias RoomScanCompletion = (_ lengthMm: Double, _ widthMm: Double, _ heightMm: Double) -> Void
+typealias RoomScanError = (_ message: String) -> Void
 
 // MARK: - UIViewControllerRepresentable wrapper for RoomCaptureViewController
 struct RoomCaptureRepresentable: UIViewControllerRepresentable {
     var onScanComplete: RoomScanCompletion
     var onCancel: () -> Void
+    var onError: RoomScanError
 
     func makeUIViewController(context: Context) -> RoomCaptureHostViewController {
         let vc = RoomCaptureHostViewController()
         vc.onScanComplete = onScanComplete
         vc.onCancel = onCancel
+        vc.onError = onError
         return vc
     }
 
@@ -25,6 +28,7 @@ struct RoomCaptureRepresentable: UIViewControllerRepresentable {
 class RoomCaptureHostViewController: UIViewController, RoomCaptureSessionDelegate, RoomCaptureViewDelegate {
     var onScanComplete: RoomScanCompletion?
     var onCancel: (() -> Void)?
+    var onError: RoomScanError?
 
     private var roomCaptureView: RoomCaptureView!
     private var roomCaptureSession: RoomCaptureSession!
@@ -101,7 +105,9 @@ class RoomCaptureHostViewController: UIViewController, RoomCaptureSessionDelegat
     func captureView(didPresent processedResult: CapturedRoom, error: Error?) {
         if let error = error {
             print("RoomPlan error: \(error)")
-            onCancel?()
+            DispatchQueue.main.async { [weak self] in
+                self?.onError?("Scan failed: \(error.localizedDescription)")
+            }
             return
         }
         extractDimensions(from: processedResult)

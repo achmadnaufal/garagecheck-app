@@ -23,6 +23,7 @@ targets:
         excludes:
           - "**/*.md"
     resources:
+      - path: GarageCheck/Assets.xcassets
       - path: GarageCheck/Data/indonesian_cars.json
     info:
       path: GarageCheck/Info.plist
@@ -31,6 +32,7 @@ targets:
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         NSCameraUsageDescription: "GarageCheck uses the camera to scan your garage with AR."
+        NSMotionUsageDescription: "GarageCheck uses motion sensors for accurate AR measurement."
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
@@ -39,6 +41,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: GarageCheck/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     dependencies:
       - framework: ARKit.framework
         embed: false
