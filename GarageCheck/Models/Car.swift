@@ -9,7 +9,7 @@ struct Car: Identifiable, Codable, Hashable {
     var lengthMm: Double
     var widthMm: Double
     var heightMm: Double
-    var wheelbaseMm: Double
+    var wheelbaseMm: Double?
     var segment: String
 
     enum CodingKeys: String, CodingKey {
@@ -28,7 +28,7 @@ struct Car: Identifiable, Codable, Hashable {
         lengthMm: Double,
         widthMm: Double,
         heightMm: Double,
-        wheelbaseMm: Double,
+        wheelbaseMm: Double? = nil,
         segment: String = ""
     ) {
         self.id = id

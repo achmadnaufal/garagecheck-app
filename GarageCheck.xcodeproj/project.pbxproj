@@ -13,9 +13,12 @@
 		20D1F2414D53161C6CAFD0CE /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291C8488174DAB746817D65B /* ARKit.framework */; };
 		2AD10EF011E5D3F05BEDE0DE /* GarageScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED296ED0B20E41A7BB837C /* GarageScanView.swift */; };
 		2B494081BD5A414F4B3F012E /* FitCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72095572518009B646DA7B9 /* FitCheckView.swift */; };
+		2D50CD998ED45A91B86E257F /* RoomCaptureRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BE837FC8A90EDEA6B3858 /* RoomCaptureRepresentable.swift */; };
 		2F306A7EA642B50F5D52282F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F211AEBD616C1FC4627D99 /* Car.swift */; };
 		6DB883121A084E0EB72A2B0E /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC461CA0A6D4186B1DEAE0C /* Garage.swift */; };
+		770BABE6FD8FAEAB99C28CB9 /* RoomPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D098C82B6830CA49ECE2B6C /* RoomPlan.framework */; };
 		825E75EE131F32F6FBBCB6D8 /* FitCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C430DC872792F45169C7D /* FitCalculationService.swift */; };
+		859E7A81C215AB0ECC336A1F /* FitCalculationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2067B895F774EA46035293 /* FitCalculationServiceTests.swift */; };
 		91404B4C96E2991F3FB9835B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8655E2BDE31D051E63510 /* DashboardView.swift */; };
 		99A0FBD8D2AB0C0CFD147629 /* SavedResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */; };
 		A732F8FA1425A8E19FFF6742 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B684406FBF7843FF09359 /* OnboardingView.swift */; };
@@ -24,7 +27,18 @@
 		E58AAD9D9E3E1CFA683F3B9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10051E15CFB09612BE37FAF0 /* Constants.swift */; };
 		E95DBE8109E3B46D6D164287 /* GarageScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF82D8260205E2A89940FE0 /* GarageScanService.swift */; };
 		ECF87541000132AAB29D5437 /* CarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AD650D1C2285AEF6EDD58 /* CarSelectionView.swift */; };
+		FF2A0FF0AA98AD47D07783D2 /* SavedResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E1695FDFA82DAD22B0CDA /* SavedResultsService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EC26FCC4648482D002F0EB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9484ADF39BC988D4E20E83A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D15C863286518A95DAA9BE19;
+			remoteInfo = GarageCheck;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A4B684406FBF7843FF09359 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -32,7 +46,12 @@
 		13733CFD40B990B13FFD8B62 /* FitResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitResult.swift; sourceTree = "<group>"; };
 		14CA4406B765B66710837629 /* GarageCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCheckApp.swift; sourceTree = "<group>"; };
 		291C8488174DAB746817D65B /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARKit.framework; sourceTree = "<group>"; };
+		4B7BE837FC8A90EDEA6B3858 /* RoomCaptureRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureRepresentable.swift; sourceTree = "<group>"; };
+		4C7E1695FDFA82DAD22B0CDA /* SavedResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsService.swift; sourceTree = "<group>"; };
+		4D2D4C9E498097F46B0617F6 /* GarageCheckTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GarageCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D098C82B6830CA49ECE2B6C /* RoomPlan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RoomPlan.framework; sourceTree = "<group>"; };
 		782C430DC872792F45169C7D /* FitCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCalculationService.swift; sourceTree = "<group>"; };
+		7E2067B895F774EA46035293 /* FitCalculationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCalculationServiceTests.swift; sourceTree = "<group>"; };
 		82ED296ED0B20E41A7BB837C /* GarageScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageScanView.swift; sourceTree = "<group>"; };
 		82F211AEBD616C1FC4627D99 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		8470CD4B2A9BD983BE2872B6 /* indonesian_cars.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indonesian_cars.json; sourceTree = "<group>"; };
@@ -44,6 +63,7 @@
 		BE0EB78A521A258BBD87D4A9 /* GarageCheck.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GarageCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsView.swift; sourceTree = "<group>"; };
 		D72095572518009B646DA7B9 /* FitCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCheckView.swift; sourceTree = "<group>"; };
+		F2250868854AF41541CDDC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealityKit.framework; sourceTree = "<group>"; };
 		F6C8655E2BDE31D051E63510 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +75,7 @@
 			files = (
 				20D1F2414D53161C6CAFD0CE /* ARKit.framework in Frameworks */,
 				1721C055FD13C9B445DB791B /* RealityKit.framework in Frameworks */,
+				770BABE6FD8FAEAB99C28CB9 /* RoomPlan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +90,7 @@
 				D72095572518009B646DA7B9 /* FitCheckView.swift */,
 				82ED296ED0B20E41A7BB837C /* GarageScanView.swift */,
 				0A4B684406FBF7843FF09359 /* OnboardingView.swift */,
+				4B7BE837FC8A90EDEA6B3858 /* RoomCaptureRepresentable.swift */,
 				D3EB7A724A4FDAF4493F4CE7 /* SavedResultsView.swift */,
 			);
 			path = Views;
@@ -78,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B86C90159A1BD26DF05E58DA /* GarageCheck */,
+				B831F9111374BB6E3C6F483D /* GarageCheckTests */,
 				676DE3ED36F34B37C3662FCF /* Frameworks */,
 				DCCF2EDED5E9BF96D182190E /* Products */,
 			);
@@ -106,6 +129,7 @@
 			children = (
 				291C8488174DAB746817D65B /* ARKit.framework */,
 				F3DC39DF3E07E9D2D584EEAF /* RealityKit.framework */,
+				6D098C82B6830CA49ECE2B6C /* RoomPlan.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +140,15 @@
 				10051E15CFB09612BE37FAF0 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B831F9111374BB6E3C6F483D /* GarageCheckTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E2067B895F774EA46035293 /* FitCalculationServiceTests.swift */,
+				F2250868854AF41541CDDC91 /* Info.plist */,
+			);
+			path = GarageCheckTests;
 			sourceTree = "<group>";
 		};
 		B86C90159A1BD26DF05E58DA /* GarageCheck */ = {
@@ -136,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0EB78A521A258BBD87D4A9 /* GarageCheck.app */,
+				4D2D4C9E498097F46B0617F6 /* GarageCheckTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +188,7 @@
 				8779B7A6365614AA41F6CFC9 /* CarDataService.swift */,
 				782C430DC872792F45169C7D /* FitCalculationService.swift */,
 				9FF82D8260205E2A89940FE0 /* GarageScanService.swift */,
+				4C7E1695FDFA82DAD22B0CDA /* SavedResultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -161,6 +196,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9B942637DBAE29579DF473BC /* GarageCheckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F67AAEC874F09E3CDB5A0C1E /* Build configuration list for PBXNativeTarget "GarageCheckTests" */;
+			buildPhases = (
+				A359F3EF96379EC855C93B51 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4484B767EC923069257F69DA /* PBXTargetDependency */,
+			);
+			name = GarageCheckTests;
+			packageProductDependencies = (
+			);
+			productName = GarageCheckTests;
+			productReference = 4D2D4C9E498097F46B0617F6 /* GarageCheckTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D15C863286518A95DAA9BE19 /* GarageCheck */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBE8328819FD1FAD51ECEC7A /* Build configuration list for PBXNativeTarget "GarageCheck" */;
@@ -189,6 +242,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					9B942637DBAE29579DF473BC = {
+						DevelopmentTeam = "";
+					};
 					D15C863286518A95DAA9BE19 = {
 						DevelopmentTeam = "";
 					};
@@ -209,6 +265,7 @@
 			projectRoot = "";
 			targets = (
 				D15C863286518A95DAA9BE19 /* GarageCheck */,
+				9B942637DBAE29579DF473BC /* GarageCheckTests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,11 +299,29 @@
 				E95DBE8109E3B46D6D164287 /* GarageScanService.swift in Sources */,
 				2AD10EF011E5D3F05BEDE0DE /* GarageScanView.swift in Sources */,
 				A732F8FA1425A8E19FFF6742 /* OnboardingView.swift in Sources */,
+				2D50CD998ED45A91B86E257F /* RoomCaptureRepresentable.swift in Sources */,
+				FF2A0FF0AA98AD47D07783D2 /* SavedResultsService.swift in Sources */,
 				99A0FBD8D2AB0C0CFD147629 /* SavedResultsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A359F3EF96379EC855C93B51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859E7A81C215AB0ECC336A1F /* FitCalculationServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4484B767EC923069257F69DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D15C863286518A95DAA9BE19 /* GarageCheck */;
+			targetProxy = 9EC26FCC4648482D002F0EB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		67C4DDEBEC46CD7C08A3059D /* Debug */ = {
@@ -284,6 +359,22 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7A51F3F6DDCD07FB09DF9055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GarageCheckTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GarageCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GarageCheck";
 			};
 			name = Release;
 		};
@@ -351,6 +442,22 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		CB0D0D7795654C23555BDEF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GarageCheckTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GarageCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GarageCheck";
 			};
 			name = Debug;
 		};
@@ -431,6 +538,15 @@
 			buildConfigurations = (
 				9BEAE2E7ED551F8D2184A907 /* Debug */,
 				D4BDF623F919D05F35CD32E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F67AAEC874F09E3CDB5A0C1E /* Build configuration list for PBXNativeTarget "GarageCheckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0D0D7795654C23555BDEF3 /* Debug */,
+				7A51F3F6DDCD07FB09DF9055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

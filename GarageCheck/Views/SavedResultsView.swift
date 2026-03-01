@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct SavedResultsView: View {
-    @State private var results: [FitResult] = []
+    @EnvironmentObject var savedResultsService: SavedResultsService
+
+    private var sortedResults: [FitResult] {
+        savedResultsService.results.sorted { $0.checkedAt > $1.checkedAt }
+    }
 
     var body: some View {
         Group {
-            if results.isEmpty {
+            if savedResultsService.results.isEmpty {
                 ContentUnavailableView(
                     "No Saved Results",
                     systemImage: "list.bullet.clipboard",
@@ -13,7 +17,7 @@ struct SavedResultsView: View {
                 )
             } else {
                 List {
-                    ForEach(results.sorted { $0.checkedAt > $1.checkedAt }) { result in
+                    ForEach(sortedResults) { result in
                         resultRow(result: result)
                     }
                     .onDelete(perform: deleteResults)
@@ -21,9 +25,8 @@ struct SavedResultsView: View {
                 .listStyle(.insetGrouped)
             }
         }
-        .onAppear(perform: loadResults)
         .toolbar {
-            if !results.isEmpty {
+            if !savedResultsService.results.isEmpty {
                 EditButton()
             }
         }
@@ -56,19 +59,7 @@ struct SavedResultsView: View {
         .padding(.vertical, 4)
     }
 
-    private func loadResults() {
-        guard let data = UserDefaults.standard.data(forKey: Constants.Storage.savedResultsKey),
-              let decoded = try? JSONDecoder().decode([FitResult].self, from: data) else { return }
-        results = decoded
-    }
-
     private func deleteResults(at offsets: IndexSet) {
-        let sorted = results.sorted { $0.checkedAt > $1.checkedAt }
-        var mutable = sorted
-        mutable.remove(atOffsets: offsets)
-        results = mutable
-        if let data = try? JSONEncoder().encode(results) {
-            UserDefaults.standard.set(data, forKey: Constants.Storage.savedResultsKey)
-        }
+        savedResultsService.delete(at: offsets, in: sortedResults)
     }
 }
