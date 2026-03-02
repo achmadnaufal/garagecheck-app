@@ -7,10 +7,21 @@ struct FitCalculationService {
     static let comfortableThreshold: Double = 300  // 15cm per side when car centered (total margin)
     static let tightThreshold: Double = 100         //  5cm per side when car centered (total margin)
 
-    /// Primary calculation: given a garage and car, return a FitResult
-    static func calculate(garage: Garage, car: Car) -> FitResult {
+    /// Primary calculation: given a garage and car, return a FitResult.
+    /// When `mirrorsExtended` is true and the car provides `mirrorWidthExtendedMm`,
+    /// the extended mirror width is used for the width margin calculation.
+    static func calculate(garage: Garage, car: Car, mirrorsExtended: Bool = false) -> FitResult {
+        let effectiveWidth: Double = {
+            if mirrorsExtended, let extended = car.mirrorWidthExtendedMm {
+                return extended
+            }
+            if !mirrorsExtended, let folded = car.mirrorWidthFoldedMm {
+                return folded
+            }
+            return car.widthMm
+        }()
         let lengthMargin = garage.lengthMm - car.lengthMm
-        let widthMargin = garage.widthMm - car.widthMm
+        let widthMargin = garage.widthMm - effectiveWidth
         let heightMargin = garage.heightMm - car.heightMm
 
         let status = fitStatus(

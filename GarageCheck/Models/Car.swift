@@ -10,6 +10,8 @@ struct Car: Identifiable, Codable, Hashable {
     var widthMm: Double
     var heightMm: Double
     var wheelbaseMm: Double?
+    var mirrorWidthFoldedMm: Double?
+    var mirrorWidthExtendedMm: Double?
     var segment: String
 
     enum CodingKeys: String, CodingKey {
@@ -18,6 +20,8 @@ struct Car: Identifiable, Codable, Hashable {
         case widthMm = "width_mm"
         case heightMm = "height_mm"
         case wheelbaseMm = "wheelbase_mm"
+        case mirrorWidthFoldedMm = "mirror_width_folded_mm"
+        case mirrorWidthExtendedMm = "mirror_width_extended_mm"
     }
 
     init(
@@ -29,6 +33,8 @@ struct Car: Identifiable, Codable, Hashable {
         widthMm: Double,
         heightMm: Double,
         wheelbaseMm: Double? = nil,
+        mirrorWidthFoldedMm: Double? = nil,
+        mirrorWidthExtendedMm: Double? = nil,
         segment: String = ""
     ) {
         self.id = id
@@ -39,6 +45,8 @@ struct Car: Identifiable, Codable, Hashable {
         self.widthMm = widthMm
         self.heightMm = heightMm
         self.wheelbaseMm = wheelbaseMm
+        self.mirrorWidthFoldedMm = mirrorWidthFoldedMm
+        self.mirrorWidthExtendedMm = mirrorWidthExtendedMm
         self.segment = segment
     }
 

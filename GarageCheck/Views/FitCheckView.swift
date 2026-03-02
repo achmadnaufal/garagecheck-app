@@ -6,10 +6,20 @@ struct FitCheckView: View {
 
     @EnvironmentObject var savedResultsService: SavedResultsService
     @Environment(\.dismiss) private var dismiss
+
     @State private var savedResult = false
+    @State private var mirrorsExtended = false
+    @State private var shareImage: Image? = nil
+    @State private var isSharing = false
 
     private var result: FitResult {
-        FitCalculationService.calculate(garage: garage, car: car)
+        FitCalculationService.calculate(garage: garage, car: car, mirrorsExtended: mirrorsExtended)
+    }
+
+    private var effectiveWidth: Double {
+        if mirrorsExtended, let ext = car.mirrorWidthExtendedMm { return ext }
+        if !mirrorsExtended, let fld = car.mirrorWidthFoldedMm { return fld }
+        return car.widthMm
     }
 
     var body: some View {
@@ -17,6 +27,9 @@ struct FitCheckView: View {
             ScrollView {
                 VStack(spacing: 24) {
                     resultBadge
+                    if car.mirrorWidthFoldedMm != nil || car.mirrorWidthExtendedMm != nil {
+                        mirrorToggleCard
+                    }
                     summaryCard
                     marginsCard
                     dimensionsComparisonCard
@@ -30,17 +43,33 @@ struct FitCheckView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
                 }
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: saveResult) {
-                        Image(systemName: savedResult ? "checkmark" : "square.and.arrow.down")
-                    }
-                    .disabled(savedResult)
+                ToolbarItemGroup(placement: .primaryAction) {
+                    shareButton
+                    saveButton
                 }
             }
         }
     }
 
+    // MARK: - Toolbar Buttons
+
+    private var saveButton: some View {
+        Button(action: saveResult) {
+            Image(systemName: savedResult ? "checkmark" : "square.and.arrow.down")
+        }
+        .disabled(savedResult)
+    }
+
+    private var shareButton: some View {
+        Button {
+            renderAndShare()
+        } label: {
+            Image(systemName: "square.and.arrow.up")
+        }
+    }
+
     // MARK: - Result Badge
+
     private var resultBadge: some View {
         VStack(spacing: 12) {
             Text(result.status.emoji)
@@ -61,7 +90,30 @@ struct FitCheckView: View {
         .cornerRadius(Constants.UI.cornerRadius)
     }
 
+    // MARK: - Mirror Toggle
+
+    private var mirrorToggleCard: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Side Mirror Width")
+                .font(.headline)
+            Picker("Mirror position", selection: $mirrorsExtended) {
+                Text("Folded").tag(false)
+                Text("Extended").tag(true)
+            }
+            .pickerStyle(.segmented)
+            Text(mirrorsExtended
+                 ? "Width includes extended mirrors (\(Int(effectiveWidth)) mm)"
+                 : "Width uses folded mirrors (\(Int(effectiveWidth)) mm)")
+                .font(.caption)
+                .foregroundColor(.secondary)
+        }
+        .padding(Constants.UI.padding)
+        .background(Color(.secondarySystemBackground))
+        .cornerRadius(Constants.UI.cornerRadius)
+    }
+
     // MARK: - Summary
+
     private var summaryCard: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Summary")
@@ -77,6 +129,7 @@ struct FitCheckView: View {
     }
 
     // MARK: - Margins
+
     private var marginsCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Clearance")
@@ -140,6 +193,7 @@ struct FitCheckView: View {
     }
 
     // MARK: - Dimensions Comparison
+
     private var dimensionsComparisonCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Dimensions Compared")
@@ -161,7 +215,7 @@ struct FitCheckView: View {
             Divider()
             comparisonRow(label: "Length", garageMm: garage.lengthMm, carMm: car.lengthMm)
             Divider()
-            comparisonRow(label: "Width", garageMm: garage.widthMm, carMm: car.widthMm)
+            comparisonRow(label: "Width", garageMm: garage.widthMm, carMm: effectiveWidth)
             Divider()
             comparisonRow(label: "Height", garageMm: garage.heightMm, carMm: car.heightMm)
         }
@@ -187,6 +241,7 @@ struct FitCheckView: View {
     }
 
     // MARK: - Disclaimer
+
     private var disclaimerCard: some View {
         HStack(alignment: .top, spacing: 8) {
             Image(systemName: "exclamationmark.triangle")
@@ -201,7 +256,83 @@ struct FitCheckView: View {
         .cornerRadius(Constants.UI.cornerRadius)
     }
 
+    // MARK: - Share as Image
+
+    @MainActor
+    private func renderAndShare() {
+        let renderer = ImageRenderer(content: shareCard)
+        renderer.scale = 3
+        guard let uiImage = renderer.uiImage else { return }
+        let activityVC = UIActivityViewController(
+            activityItems: [uiImage],
+            applicationActivities: nil
+        )
+        if let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first,
+           let rootVC = windowScene.windows.first?.rootViewController {
+            rootVC.present(activityVC, animated: true)
+        }
+    }
+
+    /// Compact card rendered to image for sharing
+    private var shareCard: some View {
+        VStack(spacing: 16) {
+            HStack {
+                Image(systemName: "car.fill")
+                    .font(.title2)
+                    .foregroundColor(.blue)
+                Text("GarageCheck")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+            }
+
+            Text(result.status.emoji)
+                .font(.system(size: 56))
+            Text(result.status.rawValue)
+                .font(.title2.bold())
+                .foregroundColor(result.status.color)
+            Text(result.car.fullDisplayName)
+                .font(.headline)
+            Text("in \(result.garage.name)")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
+            Divider()
+
+            VStack(spacing: 6) {
+                shareMarginRow(label: "Width", valueMm: result.widthMarginMm)
+                shareMarginRow(label: "Length", valueMm: result.lengthMarginMm)
+                shareMarginRow(label: "Height", valueMm: result.heightMarginMm)
+            }
+            .font(.subheadline)
+
+            Text(Constants.Disclaimer.measurementWarning)
+                .font(.caption2)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+        }
+        .padding(24)
+        .frame(width: 320)
+        .background(Color(.systemBackground))
+        .cornerRadius(20)
+        .shadow(radius: 8)
+    }
+
+    private func shareMarginRow(label: String, valueMm: Double) -> some View {
+        HStack {
+            Text(label)
+            Spacer()
+            Text(valueMm < 0
+                 ? String(format: "-%.0fmm", abs(valueMm))
+                 : String(format: "+%.0fmm", valueMm))
+                .foregroundColor(colorForMargin(valueMm))
+                .bold()
+        }
+    }
+
     // MARK: - Save
+
     private func saveResult() {
         savedResultsService.save(result: result)
         savedResult = true
