@@ -1,0 +1,7 @@
+{
+  "phase": 5,
+  "status": "complete",
+  "build": "succeeded",
+  "features": ["multi_garage", "segment_filter", "compare_mode"],
+  "commit": "813bd51"
+}
