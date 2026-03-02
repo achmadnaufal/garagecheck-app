@@ -31,6 +31,7 @@ enum Constants {
 
     enum Storage {
         static let savedGaragesKey = "saved_garages"
+        static let activeGarageIDKey = "active_garage_id"
         static let savedResultsKey = "saved_results"
         static let hasSeenOnboardingKey = "has_seen_onboarding"
     }

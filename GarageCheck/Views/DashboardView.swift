@@ -5,7 +5,6 @@ struct DashboardView: View {
     @EnvironmentObject var garageScanService: GarageScanService
 
     @State private var selectedTab = 0
-    @AppStorage(Constants.Storage.savedResultsKey) private var savedResultsData: Data = Data()
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -21,24 +20,30 @@ struct DashboardView: View {
                 }
                 .tag(1)
 
+            compareTab
+                .tabItem {
+                    Label("Compare", systemImage: "arrow.left.arrow.right.square.fill")
+                }
+                .tag(2)
+
             resultsTab
                 .tabItem {
                     Label("Results", systemImage: "list.bullet.clipboard.fill")
                 }
-                .tag(2)
+                .tag(3)
         }
     }
 
-    // MARK: - Garage Tab
+    // MARK: - Tabs
+
     private var garageTab: some View {
         NavigationStack {
-            GarageScanView()
-                .navigationTitle("My Garage")
+            GarageListView()
+                .navigationTitle("Garages")
                 .navigationBarTitleDisplayMode(.large)
         }
     }
 
-    // MARK: - Cars Tab
     private var carSelectionTab: some View {
         NavigationStack {
             CarSelectionView()
@@ -47,7 +52,14 @@ struct DashboardView: View {
         }
     }
 
-    // MARK: - Results Tab
+    private var compareTab: some View {
+        NavigationStack {
+            CompareView()
+                .navigationTitle("Compare")
+                .navigationBarTitleDisplayMode(.large)
+        }
+    }
+
     private var resultsTab: some View {
         NavigationStack {
             SavedResultsView()
@@ -62,5 +74,6 @@ struct DashboardView_Previews: PreviewProvider {
         DashboardView()
             .environmentObject(CarDataService())
             .environmentObject(GarageScanService())
+            .environmentObject(SavedResultsService())
     }
 }
